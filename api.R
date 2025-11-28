@@ -1,7 +1,7 @@
 library(httr)
 library(jsonlite)
 library(glue)
-key <- "TyBY7HHxBgoUkBGxhzndB6EDWTML164GIHzkbyPyyk%2BaKp0uM8k33Dr1zvtM4aswGwClooAYyD3yTY%2B5D1TT1w%3D%3D"
+key <- #insert API key here
 df <- data.frame(matrix(ncol = 10, nrow = 0))
 colnames(df) <- c("response.header.resultCode", "response.header.resultMsg", "response.body.items.item.dateKind", "response.body.items.item.dateName", "response.body.items.item.isHoliday", "response.body.items.item.locdate", "response.body.items.item.seq", "response.body.numOfRows", "response.body.pageNo", "response.body.totalCount")
 
@@ -20,3 +20,4 @@ for(year in 2015:2024) {
 }
 
 write.csv(df, "holidays.csv")
+
