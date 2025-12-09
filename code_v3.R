@@ -160,9 +160,9 @@ ggplot() +
   geom_line(mapping = aes(x = train, y = elec_frame$GDP[train]), colour = 'red')
 
 #baseline bats
-batsh_t <- bats(elec_frame$max_MW, seasonal.periods = c(7, 365))
-plot(batsh_t)
-bats_forecast <- forecast(batsh_t)
+bats_bl <- bats(elec_frame$max_MW, seasonal.periods = c(7, 365))
+plot(bats_bl)
+bats_forecast <- forecast(bats_bl)
 plot(bats_forecast)
 plot(bats_forecast$mean[1:365] - elec_frame$max_MW[valid])
 
@@ -503,3 +503,4 @@ Box.test(resid_sar, lag = 7, "Ljung-Box")
 resid_garch <- as.vector(residuals(garchfit12))
 acf(resid_garch)
 Box.test(resid_garch, lag = 7, "Ljung-Box")
+
